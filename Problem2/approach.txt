@@ -1,0 +1,10 @@
+1. Image Compression : 
+    - Due to supporting legacy + Old compression -> Adapter + Proxy (compressing the client image as request )
+
+2. Channel Delivery System:
+    - Bridge Pattrn (Decouple the channel - delivery).
+    
+
+
+1. Building Legaxy Png & Compressor technique..
+2. 

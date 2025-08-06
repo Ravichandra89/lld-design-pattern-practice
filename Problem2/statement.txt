@@ -1,0 +1,21 @@
+LLD Interview Problem: Media Upload Service (Simplified)
+
+📖 Short Problem Statement
+
+Design a Media Upload Service that supports:
+
+1. Image Compression
+
+- Users upload images in various formats (JPEG, PNG).
+
+- Compress before storage using both an old JPEG compressor (legacy) and a new PNG compressor.
+
+- Provide a unified ImageCompressor interface. 
+
+
+2. Delivery Channel Selection
+
+- After storage, images may be delivered via CDN or Email.
+- Decouple delivery logic from channels.
+
+
