@@ -1,0 +1,17 @@
+- Add/Remove items
+- Calculate price for cart
+- Reserve inventory
+- Collect Payments
+- Create an order
+
+Clearifying Questions: 
+    - What type of currency I have to deal (INR/$) And their Tax Rule.
+    - How many Paymet Methods are supported here.
+    - Is there single warehouse or multiple Inventories are there.
+    - Guest user or Only Registered user can create order ?
+    - Concurrency while cart and payment Race Condition.
+    
+Non Functional Requirements:   
+    - Consistency - Do not overlap stock.
+    - Extensibility - Can add future payment Methods
+    - 

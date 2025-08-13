@@ -1,0 +1,3 @@
+Design a simple E-commerce Cart & Checkout system.
+Users can add/remove items to a cart and place an order. At checkout, the system calculates price (incl. discounts & tax), reserves inventory, collects payment, and creates an order. Design classes, key flows, and extensibility points. Assume in-memory storage for now; code in C++ (interfaces and class sketches are fine).
+
