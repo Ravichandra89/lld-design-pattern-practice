@@ -14,4 +14,14 @@ Clearifying Questions:
 Non Functional Requirements:   
     - Consistency - Do not overlap stock.
     - Extensibility - Can add future payment Methods
-    - 
+    - Idempotency - Can't re submit the payment.
+
+Entities : 
+    - Product : productId, name, price
+    - Inventory: productId, availableQty, reservedQty
+    - Cart: cartId, userId, vector<CartProducts>, total_price
+    - CartProduct: productId, price, qty
+    - Order: orderId, userId, vector<OrderProduct>, orderStatus
+    - OrderProduct: productId, qty, unitPrice
+    - Payment: paymentId, orderId, amount, orderStatus, payment_Method
+    - Address: line1, line2, city, state, pinCode
