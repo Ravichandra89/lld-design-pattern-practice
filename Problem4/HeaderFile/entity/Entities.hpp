@@ -13,6 +13,7 @@ struct Product
     string productId;
     string name;
     double price;
+    int quantity = 0;
 };
 
 struct InventoryItem
