@@ -9,9 +9,9 @@
 
 using namespace std;
 
-class Payment {
+class PaymentKaro {
     public: 
-        virtual ~Payment() = default;
+        virtual ~PaymentKaro() = default;
         virtual bool pay(double amount) const = 0;
 };
 

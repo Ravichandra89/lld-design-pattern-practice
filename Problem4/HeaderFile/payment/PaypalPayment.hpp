@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class PaypalPayment : public Payment {
+class PaypalPayment : public PaymentKaro {
     string email;
     string password;
 

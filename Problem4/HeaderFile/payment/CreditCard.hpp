@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-class CreditCard : public Payment {
+class CreditCard : public PaymentKaro {
         string cardNumber;
         string name;
         string expiryDate;

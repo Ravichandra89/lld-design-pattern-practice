@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class UpiPayment : public Payment {
+class UpiPayment : public PaymentKaro {
     string upiId;
     string name;
 
