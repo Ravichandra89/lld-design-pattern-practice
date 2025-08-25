@@ -1,0 +1,103 @@
+// Designing Single Restaurant order system 
+
+1. Features : 
+    - Menu Management : Items, category, price, availability
+    - Customer Workflow: view menu, add to cart, place order, payment.
+    - Order Lifecycle: Place -> confirmed -> prepare -> ready -> picup/deliver -> completed / cancelled
+    - Kitchen UI : latest orders, mark progress, update status
+    - Notification: SMS/Push/Email for Order status
+    - Payment: Accept payment (simulate payment gateways), Stripe, Paypal, Cash on delivery
+    
+    Additional not now to implement features: 
+        - Coupons & Discounts
+        - Table reservation & Dine restaurant
+        - Analytics Dashboard
+        - Admin Controls
+
+2. Non - Functional Requirements: 
+    - Availability : System shouldn't failure highly available
+    - Extensible : Adding more features no effect (Low Coupling).
+    - Correctness: no double order
+    - Lower latency : Write/Read API's
+
+3. High Level Components: 
+    - Client Layer
+    - API Layer - REST API's
+
+    - Service Layer : 
+        - Menu Service
+        - Order Service
+        - Cart Service
+        - Payment Service
+        - Notification Service
+        - Kitchen Staff Service
+
+    - Persistency :
+        - Database - RDBMS
+        - Cache - Static Database
+        - Message Brokers - Kafka 
+
+4. Data Modeling: 
+    - MenuItems: 
+        - id : string
+        - name: string (Veg/Non)
+        - description : string
+        - categoryId: string (One - Many)
+        - is_available : bool
+        - quantity: int
+        - updated_at 
+
+    - MenuCategory: 
+        - id : string
+        - name: string
+        - description: string
+        - created_at : date
+
+    - Customer: 
+        - id : UUID
+        - name: string
+        - phone: string
+        - addressId: String  TODO: Also having relation here
+        - email: string
+        - created_at: timestamp
+        - updated_at: timestamp
+
+    - customer_address: 
+        - id
+        - customer_id
+        - address_line1
+        - address_line2
+        - city(string)
+        - state (string)
+        - pincode (string)
+        - is_default (string)
+        - created_at (timestamp)
+
+    - Order : 
+        - id (string)
+        - customer_id (string)
+        - created_at 
+        - updated_at
+        - status (Placed/Confirmed/Delivered/Cancelled)
+        - total_amount (double)
+        - payment_status (Pending, Success, Failed)
+        - payment_method (UPI, CARD, WALLET)
+
+    - OrderItem: 
+        - id (UUID)
+        - order_id (link)
+        - menu_item_id
+        - quantity
+        - unit_price
+        - status
+        - created_at
+
+    - Payment: 
+        - id (uuid)
+        - order_id (Link)
+        - amount 
+        - status
+        - payment_method
+        - transaction_id
+        - created_at
+
