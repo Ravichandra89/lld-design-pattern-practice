@@ -160,4 +160,50 @@ public:
     }
 };
 
+class InventoryRepository {
+    unordered_map<string, Inventory> inv;
+    mutex mtx;
+
+    public: 
+        void set(const Inventory& v) {
+            lock_guard<mutex> lock(mtx);
+            inv[v.menu_item_id] = v;
+        }
+
+        // getByItem
+        optional<Inventory> getByItem(const string& menuItemId) {
+            lock_guard<mutex> lock(mtx);
+            if (inv.find(menuItemId) == inv.end()){
+                return nullopt;
+            }
+
+            return inv[menuItemId];
+        }
+
+        // reserve()
+        bool reserve(const string& menuItemId, int qty) {
+            lock_guard<mutex> lock(mtx);
+            auto it = inv.find(menuItemId);
+            if (it == inv.end()) return false;
+            
+            Inventory& i = it->second;
+            if (i.available_qty - i.reserved_qty >= qty) {
+                i.reserved_qty += qty;
+                i.updated_at = chrono::system_clock::now();
+                return true;
+            }
+            return false;
+        }
+
+        void release(const string & menuItemId, int qty) {
+            lock_guard<mutex> lock(mtx);
+            auto it = inv.find(menuItemId);
+            if (it == inv.end()) return;
+
+            Inventory & i = it->second;
+            i.reserved_qty = max(0, i.reserved_qty - qty);
+            i.updated_at = chrono::system_clock::now();
+        }
+};
+
 #endif
