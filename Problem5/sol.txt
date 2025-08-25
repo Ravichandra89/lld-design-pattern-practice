@@ -101,3 +101,23 @@
         - transaction_id
         - created_at
 
+
+5. API Design: 
+    - Customer API'
+        - GET /api/v1/menu - list menu Items
+        - GET /api/v1/menu/{itemId} - get item Details
+        - POST /api/v1/cart - add to cart
+        - GET /api/v1/cart - Read cart
+        - POST /api/v1/order - Create Order
+        - GET /api/v1/{orderId} - Read order
+        - GET /customer/{id}/orders - Show customer History
+
+    - Kitchen Staff API: 
+        - GET /api/v1/kitchen/orders?status=PLACED,CONFIRMED - show latest active orders
+        - POST /api/v1/kitchen/order/{orderId}/status - Update order status
+        - PATCH /api/v1/kitchen/item - update availability
+
+    - Internal Payment : 
+        - POST /api/v1/payment - make payment through gateways
+        - POST /api/v1/notification - send notification
+
