@@ -121,3 +121,17 @@
         - POST /api/v1/payment - make payment through gateways
         - POST /api/v1/notification - send notification
 
+6. Workflow : 
+    - placing an Order: 
+    - kitchen picup order and prepare
+    - payment & notification Management
+
+7. Data Storage Choice: 
+    - Primary DB: PostgreSQL - ACID
+    - Cache: Redis
+    - Message Brokers - Handling Kitchen events
+
+8. Design Patterns: 
+    - Singleton: MenuCatalog
+    - Strategy: CreditCard, COD, Paypal
+    - Observer: Notification System
