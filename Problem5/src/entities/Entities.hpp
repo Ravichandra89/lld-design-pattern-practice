@@ -26,6 +26,14 @@ struct MenuItem {
     Timestamp created_at;
 };
 
+class IdGenerator {
+public:
+    static string next(const string& prefix) {
+        static int counter = 1;
+        return prefix + to_string(counter++);
+    }
+};
+
 struct customer {
     string id;
     string name;
@@ -53,6 +61,7 @@ struct Order {
     string payment_method;
     string idempotency_key; // For ensuring idempotent operations Like : Payment does not get processed multiple times
     vector<OrderItem> items;
+    string type;
 };
 
 struct Inventory {
@@ -71,7 +80,5 @@ struct NotificationLog {
     Timestamp created_at;
     string status; // SENT | FAILED | PENDING
 };
-
-
 
 #endif
