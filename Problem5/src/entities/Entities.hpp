@@ -45,6 +45,8 @@ struct customer {
 struct OrderItem {
     string id;
     string order_id;
+    string name;
+    string price;
     string menu_item_id;
     int quantity = 1;
     double unit_price = 0.0;
