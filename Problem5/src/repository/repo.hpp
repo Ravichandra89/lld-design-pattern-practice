@@ -29,17 +29,10 @@
 #include <mutex>
 #include <atomic>
 
+#include "../utils/IdGenerator.hpp"
+
 using namespace std;
 
-struct IdGenerator
-{
-    static inline atomic<int> counter{1};
-    static string next(const string &prefix = "")
-    {
-        auto v = counter.fetch_add(1);
-        return prefix + std::to_string(v);
-    }
-};
 
 // MenuRepository
 class MenuRepository
