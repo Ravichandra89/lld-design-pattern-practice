@@ -1,0 +1,54 @@
+📌 Parking Lot Management System — Problem Statement
+
+You are asked to design a Parking Lot Management System that can efficiently handle entry and exit of vehicles, assign parking spots, and calculate parking fees. The system should be scalable to handle large parking lots (like malls, airports, offices) and flexible enough to support different pricing models.
+
+✅ Requirements & Features
+1. Core Requirements
+
+The parking lot has multiple floors, each with a fixed number of spots.
+
+Spots can be of different types:
+
+Compact (for bikes/small cars)
+
+Large (for SUVs/trucks)
+
+Handicapped (priority)
+
+Electric (with charging station)
+
+Vehicles can be of different types: Car, Bike, Truck, ElectricCar etc.
+
+When a vehicle arrives, the system should:
+
+Generate a Parking Ticket.
+
+Assign the nearest available spot (based on type compatibility).
+
+When the vehicle leaves, the system should:
+
+Calculate parking fees (based on duration & pricing strategy).
+
+Mark the spot as available again.
+
+2. Additional Features
+
+Multiple Entry/Exit Gates with automated ticketing.
+
+Payment Support (cash, card, UPI, wallet).
+
+Dynamic Pricing Strategies (e.g., hourly rate, flat fee, peak-hour surcharge).
+
+Admin Dashboard to view occupancy, revenue, and manage pricing.
+
+Search Feature: Check availability of spots in real-time.
+
+Future extensibility: ability to integrate with license plate recognition or mobile app booking.
+
+3. Constraints & Assumptions
+
+Each spot can hold only one vehicle at a time.
+
+A ticket must be paid before a vehicle can exit.
+
+Parking lot may support tens of thousands of vehicles daily, so the design should be efficient.
