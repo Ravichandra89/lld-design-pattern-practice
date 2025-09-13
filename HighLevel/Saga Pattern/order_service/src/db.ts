@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // create the pool
-const pool = new Pool({
+export const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,

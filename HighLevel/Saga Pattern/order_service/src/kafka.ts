@@ -9,6 +9,10 @@ const kafka = new Kafka({
 
 export const producer: Producer = kafka.producer();
 
+export const createProducer = async () => {
+  await producer.connect();
+};
+
 export const createConsumer = (groupId: string): Consumer => {
   return kafka.consumer({
     groupId,
