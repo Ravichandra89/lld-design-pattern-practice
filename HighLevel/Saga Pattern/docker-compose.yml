@@ -1,0 +1,77 @@
+version: "3.8"
+
+services: 
+  #---------
+  # Zookeeper
+  #---------
+  zookeeper:
+    image:  bitnami/zookeeper:3
+    container_name: zookeeper
+    enviornment: 
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports: 
+      - "2181:2181"
+
+  #-------
+  #kafka
+  #-------
+  kafka: 
+    image: bitnami/kafka:latest
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    enviornment:
+      # define environment
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - ALLOW_PLAINTEXT_LISTENER=yes
+
+    ports: 
+      - "9092:9092"
+
+  
+  #-------
+  # Order Service DB
+  #-------
+
+  order-id:
+    images: mongo:latest
+    container_name: order-id
+    enviornment:
+      - POSTGRES_USER=order
+      - POSTGRES_PASSWORD=orderpwd
+      - POSTGRES_DB=orderdb
+
+    ports:
+      - "27017:27017"
+    volumes:
+      - order_db_data:/var/lib/postgresql/data
+
+  #-------
+  # Payment Service DB
+  #-------
+
+  payment-id:
+    images: postgres:latest
+    container_name: payment-id
+    enviornment:
+      - POSTGRES_USER=payment
+      - POSTGRES_PASSWORD=paymentpwd
+      - POSTGRES_DB=paymentdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - payment_db_data:/var/lib/postgresql/data
+
+
+  #-------
+  # volumes
+  #-------
+
+  volumes:
+    order_db_data:
+    payment_db_data:
+
+
