@@ -1,0 +1,51 @@
+- Design Library Management System.
+
+1. Requirement Gathering : FR
+    - User: 
+        - Member : borrow and return books
+        - librarian: manage books and Inventory
+    - User management
+        - Register new users
+        - login users
+        - manage user roles
+        - update user profiles
+    - Inventory management: 
+        - CURD on books - Create, Read, Update, Delete books -> Inventory
+    - Search funcanality: 
+        - by name, filter, author_name etc...
+    - Borrowing and Returing: 
+        - Allow borrow and return the books
+        - manage reservation
+    - Due dates & panelties:
+        - calculate panelty ammount for due dates per day 1/-
+    - Notification System: 
+        - It supports multiple notification methods : Email, Push, SMS etc...
+
+UML Diagram: 
+    - Classes : 
+        - User
+        - books
+        - Library
+        - Notification
+        - reservation
+        - transaction
+
+
+    - user: 
+        // Attributes
+        - userId, 
+        - name,
+        - email, 
+        - password,
+        - phone
+        - role,
+        - borrowBooks
+
+        // methods
+        - register()
+        - login()
+        - updateProfile()
+        - getBorrowBooks()
+
+    - 
+
