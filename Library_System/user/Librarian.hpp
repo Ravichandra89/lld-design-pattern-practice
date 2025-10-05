@@ -10,8 +10,8 @@ class Librarian : public User
     Inventory *inventory;
 
 public:
-    Librarian(const string &userId, const string &name, const string &email, string &password, Inventory *inv) : User(userId, name, email, password) {
-        inventory = inv;
+    Librarian(const string &userId, const string &name, const string &email,const string &password) : User(userId, name, email, password) {
+        inventory = Inventory::getInstance();
     };
 
     // addBooks

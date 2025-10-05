@@ -69,7 +69,7 @@ public:
     }
 
     // Notification
-    void sendNotificationChannel(const string &type)
+    void setNotificationChannel(const string &type)
     {
         notify.setChannel(type);
     }
