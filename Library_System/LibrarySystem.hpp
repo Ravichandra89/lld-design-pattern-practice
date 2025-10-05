@@ -1,10 +1,10 @@
 #ifndef LIBRARY_SYSTEM_HPP
 #define LIBRARY_SYSTEM_HPP
 
-#include "../subsystems/borrowingManager.hpp"
-#include "../subsystems/inventoryManager.hpp"
-#include "../subsystems/notificationManager.hpp"
-#include "../subsystems/userManager.hpp"
+#include "subsystems/borrowingManager.hpp"
+#include "subsystems/inventoryManager.hpp"
+#include "subsystems/notificationManager.hpp"
+#include "subsystems/userManager.hpp"
 #include <mutex>
 
 using namespace std;

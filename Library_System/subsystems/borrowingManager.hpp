@@ -1,7 +1,7 @@
 #ifndef BORROWINGMANAGER_H
 #define BORROWINGMANAGER_H
 
-#include "user/Member.hpp"
+#include "../user/Member.hpp"
 #include "notificationManager.hpp"
 
 class BorrowingManager

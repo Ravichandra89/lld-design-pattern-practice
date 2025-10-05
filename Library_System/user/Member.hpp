@@ -70,4 +70,7 @@ public:
     }
 };
 
+// Static Variable initilization
+mutex Member::mtx;
+
 #endif

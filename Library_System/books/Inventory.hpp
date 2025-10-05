@@ -88,4 +88,7 @@ public:
     }
 };
 
+Inventory *Inventory::instance = nullptr;
+mutex Inventory::mtx;
+
 #endif

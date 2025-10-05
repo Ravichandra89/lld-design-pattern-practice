@@ -1,7 +1,7 @@
 #ifndef INVENTORYMANAGER_H
 #define INVENTORYMANAGER_H
 
-#include "books/Inventory.hpp"
+#include "../books/Inventory.hpp"
 
 class InventoryManager
 {
