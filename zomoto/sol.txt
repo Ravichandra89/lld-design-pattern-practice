@@ -1,0 +1,11 @@
+- Building Online Food Delivery System
+- Classes: 
+    - DeliveryMetaData
+    - Deliverymanager 
+    - OrderManager
+    - FoodManager 
+    - ResturantManager
+    - NotificationManager
+    - StrategyManager - IDeliveryAgentMatching -> locBasedMatching
+    - Resturant - Menu, Dish, DishAddOns
+
