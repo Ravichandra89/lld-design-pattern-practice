@@ -42,6 +42,27 @@ enum class NotificationType {
     SMS
 };
 
+// Rating Enum
+enum class Rating {
+    ONE_STAR = 1,
+    TWO_STAR = 2,
+    THREE_STAR = 3,
+    FOUR_STAR = 4,
+    FIVE_STAR = 5
+};
+
+// strinfy function to rating
+inline string to_string(Rating rating) {
+    switch(rating) {
+        case Rating::ONE_STAR: return "1 Star";
+        case Rating::TWO_STAR: return "2 Stars";
+        case Rating::THREE_STAR: return "3 Stars";
+        case Rating::FOUR_STAR: return "4 Stars";
+        case Rating::FIVE_STAR: return "5 Stars";
+        default: return "Unknown Rating";
+    }
+}
+
 // Stringify functions for each enum class
 inline string to_string(OrderStatus status) {
     switch(status) {
