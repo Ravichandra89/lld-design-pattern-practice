@@ -1,0 +1,16 @@
+Interviewer: Design a Single-Restaurant Food Ordering System.
+The restaurant wants a backend service to:
+
+publish its menu,
+
+let customers browse and place orders (takeaway / dine-in / delivery),
+
+track order status (placed → confirmed → preparing → ready → completed/cancelled),
+
+allow kitchen staff to view & update orders,
+
+accept payment (card / cash on delivery),
+
+notify customers about status changes.
+
+Constraints: start with one restaurant (no multi-branch), but the system should be clean and extensible. Focus on API design, data models, concurrency (inventory/availability), and how to ensure no double-booking/overselling. Explain the components, failure modes, and major tradeoffs.
